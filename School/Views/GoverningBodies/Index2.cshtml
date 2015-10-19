@@ -1,0 +1,34 @@
+﻿@model IEnumerable<School.Models.GoverningBody>
+
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/LayoutForUser.cshtml";
+}
+
+<h2>GoverningBodies List</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position)
+        </td>
+      
+    </tr>
+}
+
+</table>

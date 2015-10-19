@@ -1,0 +1,41 @@
+﻿@model IEnumerable<School.Models.Fee>
+
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/LayoutForUser.cshtml";
+}
+
+<h2>Course Fees</h2>
+
+
+<table class="table">
+    <tr class="success">
+        <th>
+            @Html.DisplayNameFor(model => model.YearlyFees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlyFees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamRegistration)
+        </th>
+
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr class="info">
+        <td>
+            @Html.DisplayFor(modelItem => item.YearlyFees)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthlyFees)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamRegistration)
+        </td>
+
+    </tr>
+}
+
+</table>

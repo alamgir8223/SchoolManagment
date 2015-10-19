@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SchoolDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Fees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YearlyFees" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="MonthlyFees" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ExamRegistration" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="GoverningBody">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Event" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="350" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentRegistration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FathersName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MothersName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PresentAddress" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ParmanentAddress" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EnrollMentDate" Type="datetime" Nullable="false" />
+          <Property Name="Class" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Religion" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TeacherRegistration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeacherName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="JoiningDate" Type="datetime" Nullable="false" />
+          <Property Name="Graduation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SchoolDatabaseModelStoreContainer">
+          <EntitySet Name="Fees" EntityType="Self.Fees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GoverningBody" EntityType="Self.GoverningBody" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentRegistration" EntityType="Self.StudentRegistration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeacherRegistration" EntityType="Self.TeacherRegistration" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchoolDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Fee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YearlyFees" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="MonthlyFees" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ExamRegistration" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="GoverningBody">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Event" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="350" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentRegistration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FathersName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MothersName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PresentAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ParmanentAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EnrollMentDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Class" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TeacherRegistration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeacherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="JoiningDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Graduation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SchoolDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fees" EntityType="Self.Fee" />
+          <EntitySet Name="GoverningBodies" EntityType="Self.GoverningBody" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="StudentRegistrations" EntityType="Self.StudentRegistration" />
+          <EntitySet Name="TeacherRegistrations" EntityType="Self.TeacherRegistration" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchoolDatabaseModelStoreContainer" CdmEntityContainer="SchoolDatabaseEntities">
+          <EntitySetMapping Name="Fees">
+            <EntityTypeMapping TypeName="SchoolDatabaseModel.Fee">
+              <MappingFragment StoreEntitySet="Fees">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="YearlyFees" ColumnName="YearlyFees" />
+                <ScalarProperty Name="MonthlyFees" ColumnName="MonthlyFees" />
+                <ScalarProperty Name="ExamRegistration" ColumnName="ExamRegistration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GoverningBodies">
+            <EntityTypeMapping TypeName="SchoolDatabaseModel.GoverningBody">
+              <MappingFragment StoreEntitySet="GoverningBody">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="SchoolDatabaseModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentRegistrations">
+            <EntityTypeMapping TypeName="SchoolDatabaseModel.StudentRegistration">
+              <MappingFragment StoreEntitySet="StudentRegistration">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FathersName" ColumnName="FathersName" />
+                <ScalarProperty Name="MothersName" ColumnName="MothersName" />
+                <ScalarProperty Name="PresentAddress" ColumnName="PresentAddress" />
+                <ScalarProperty Name="ParmanentAddress" ColumnName="ParmanentAddress" />
+                <ScalarProperty Name="EnrollMentDate" ColumnName="EnrollMentDate" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeacherRegistrations">
+            <EntityTypeMapping TypeName="SchoolDatabaseModel.TeacherRegistration">
+              <MappingFragment StoreEntitySet="TeacherRegistration">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="Graduation" ColumnName="Graduation" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

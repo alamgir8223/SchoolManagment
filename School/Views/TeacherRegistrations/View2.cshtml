@@ -1,0 +1,46 @@
+﻿@model IEnumerable<School.Models.TeacherRegistration>
+
+@{
+    ViewBag.Title = "View2";
+    Layout = "~/Views/Shared/LayoutForUser.cshtml";
+}
+
+<h2>Teacher List</h2>
+
+
+<table class="table">
+    <tr class ="danger">
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoiningDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Graduation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="success">
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JoiningDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Graduation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+       
+    </tr>
+}
+
+</table>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SchoolDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Fees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="YearlyFees" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MonthlyFees" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ExamRegistration" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="GoverningBody">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Position" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Event" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="350" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentRegistration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FathersName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MothersName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PresentAddress" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ParmanentAddress" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EnrollMentDate" Type="datetime" Nullable="false" />
+    <Property Name="Class" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Religion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeacherRegistration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeacherName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="JoiningDate" Type="datetime" Nullable="false" />
+    <Property Name="Graduation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Subject" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SchoolDatabaseModelStoreContainer">
+    <EntitySet Name="Fees" EntityType="Self.Fees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GoverningBody" EntityType="Self.GoverningBody" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentRegistration" EntityType="Self.StudentRegistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeacherRegistration" EntityType="Self.TeacherRegistration" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

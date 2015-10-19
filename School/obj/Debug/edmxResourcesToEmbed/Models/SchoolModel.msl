@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SchoolDatabaseModelStoreContainer" CdmEntityContainer="SchoolDatabaseEntities">
+    <EntitySetMapping Name="Fees">
+      <EntityTypeMapping TypeName="SchoolDatabaseModel.Fee">
+        <MappingFragment StoreEntitySet="Fees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="YearlyFees" ColumnName="YearlyFees" />
+          <ScalarProperty Name="MonthlyFees" ColumnName="MonthlyFees" />
+          <ScalarProperty Name="ExamRegistration" ColumnName="ExamRegistration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoverningBodies">
+      <EntityTypeMapping TypeName="SchoolDatabaseModel.GoverningBody">
+        <MappingFragment StoreEntitySet="GoverningBody">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="SchoolDatabaseModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentRegistrations">
+      <EntityTypeMapping TypeName="SchoolDatabaseModel.StudentRegistration">
+        <MappingFragment StoreEntitySet="StudentRegistration">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FathersName" ColumnName="FathersName" />
+          <ScalarProperty Name="MothersName" ColumnName="MothersName" />
+          <ScalarProperty Name="PresentAddress" ColumnName="PresentAddress" />
+          <ScalarProperty Name="ParmanentAddress" ColumnName="ParmanentAddress" />
+          <ScalarProperty Name="EnrollMentDate" ColumnName="EnrollMentDate" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeacherRegistrations">
+      <EntityTypeMapping TypeName="SchoolDatabaseModel.TeacherRegistration">
+        <MappingFragment StoreEntitySet="TeacherRegistration">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Graduation" ColumnName="Graduation" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

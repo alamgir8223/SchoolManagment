@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="favicon" href="assets/images/favicon.png">
+  <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <!-- Custom styles for our template -->
+  <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="assets/css/da-slider.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
+    <link href="~/Content/Style.css" rel="stylesheet" />
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+
+
+</head>
+<body style="background-color:rgba(165, 206, 143, 0.37)">
+    
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+         
+        <!-- Button for smallest screens -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="index.html">
+            @*<img src="assets/images/logo.png" alt="Techro HTML5 template">*@
+          <h1 style="color:steelblue;width:800px;height:50px">My School </h1>
+        </a>
+      </div>
+      
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right mainNav">
+            <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+          <li>@Html.ActionLink("About Us", "About", "Home")</li>
+          <li>@Html.ActionLink("Governing Body", "Index2", "GoverningBodies")</li>
+          <li>@Html.ActionLink("Teachers List", "View2", "TeacherRegistrations")</li>
+          <li>@Html.ActionLink("Students Registration", "create", "StudentRegistrations")</li>
+          <li>@Html.ActionLink("Fees", "Index2", "Fees")</li>
+           <li>@Html.ActionLink("News", "ShowNews", "News")</li>
+          <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+          <li>@Html.Partial("_LoginPartial")</li>
+        </ul>
+         
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+  <!-- /.navbar -->
+  <!-- Header -->
+  <header id="head">
+
+    <div class="container">
+       
+</div>
+      <div class="banner-content">
+        <div id="da-slider" class="da-slider">
+          <div class="da-slide">
+            <h2>Education For All</h2>
+            <p>We Promise to provide better education for all students regardless of their merits.</p>
+            <div class="da-img"></div>
+          </div>
+          <div class="da-slide">
+            <h2>Better Environment</h2>
+            <p>Ideal Environment for for education for all the children.</p>
+            <div class="da-img"></div>
+          </div>
+          <div class="da-slide">
+            <h2>Bright Future</h2>
+            <p>We help to ensure bright future for all the children.</p>
+            <div class="da-img"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- /Header -->
+  <div class="container body-content">
+    @RenderBody()
+
+    <br />
+      <div class="container-fluid">
+        <div class="row">
+              <div class="col-sm-4" style="background-color:lavender;">
+                  <img src="~/Img/p3 - Copy.jpg" />
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>@Html.ActionLink("Read more", "Contact", "Home")
+                 
+              </div>
+              <div class="col-sm-4" style="background-color:lavenderblush;">
+                  <img src="~/Img/p3 - Copy.jpg" />
+                  <p>Sed ut perspiciatis accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>@Html.ActionLink("Read more", "Contact", "Home")
+              </div>
+              <div class="col-sm-4" style="background-color:rgba(163, 92, 183, 0.33);">
+                  <img src="~/Img/p3 - Copy.jpg" />
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>@Html.ActionLink("Read more", "Contact", "Home")
+              </div>
+          </div>
+      </div>
+      <div style="height:100px;width:100%;background-color:rgba(160, 185, 56, 0.43)">
+
+      </div>
+      @*<div style="height:80px;width:100% ;background-color:rgba(158, 199, 55, 0.60)">
+          <div style="height:80px;width:33%;float:left">
+
+          </div>
+          <div style="height:80px;width:33%;float:left">
+
+          </div>
+          <div style="height:80px;width:33%;float:left">
+
+          </div>
+      </div>*@
+    
+      <footer style="height:50px;width:100%;background-color:rgba(78, 54, 54, 0.55)">
+          <p>&copy; @DateTime.Now.Year - My School</p>
+      </footer>
+  </div>
+  
+
+  <script src="assets/js/modernizr-latest.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.cslider.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+</body>
+</html>
