@@ -1,1 +1,1 @@
-# SchoolManagment live project http://idbschool.somee.com/
+# SchoolManagement live project http://idbschool.somee.com/
